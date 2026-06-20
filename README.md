@@ -42,6 +42,31 @@ OrderManager (on-chain)
   If anything fails, the whole batch reverts  (including the swap).
 ```
 
+## Architecture
+
+```mermaid
+flowchart TD
+    User[Usuario EOA] 
+    Frontend[Frontend\nNext.js 15 + Wagmi]
+    Factory[SmartWalletFactory]
+    Wallet[SmartWallet\nEIP-4337]
+    OrderManager[OrderManager]
+    Executor[Executor Off-chain\nNode.js]
+    Bundler[Pimlico Bundler + Paymaster]
+    DEX[1inch + Uniswap V3]
+    Oracle[Chainlink]
+
+    User --> Frontend
+    Frontend --> Factory
+    Frontend --> Wallet
+    Frontend --> OrderManager
+    Executor --> OrderManager
+    Executor --> Bundler
+    Wallet --> OrderManager
+    OrderManager --> DEX
+    OrderManager --> Oracle
+    Bundler --> Wallet
+
 ---
 
 ## Contracts
