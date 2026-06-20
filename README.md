@@ -9,7 +9,6 @@ A non-custodial smart contract wallet with built-in DeFi automation on Base Sepo
 <div align="center">
   <img src="/images/homepage.png" alt="Homepage" width="85%" />
   <br><br>
-  <em>Deployed on Base Sepolia Testnet</em>
 </div>
 
 ---
@@ -95,7 +94,6 @@ Next.js + wagmi v3 + viem v2 + Tailwind v4.
 <div align="center">
   <img src="/images/dashboard.png" alt="Dashboard" width="85%" />
   <br><br>
-  <em>Deployed on Base Sepolia Testnet</em>
 </div>
 
 - `/` — How it works
@@ -105,7 +103,6 @@ Next.js + wagmi v3 + viem v2 + Tailwind v4.
 <div align="center">
   <img src="/images/settings.png" alt="Settings" width="85%" />
   <br><br>
-  <em>Deployed on Base Sepolia Testnet</em>
 </div>
 
 Supports MetaMask and Coinbase Wallet on Base Sepolia.
