@@ -1,5 +1,7 @@
 # Smart Wallet: EIP-4337 DeFi Automation
 
+URL: https://smartwallet-nine.vercel.app/
+
 A non-custodial smart contract wallet with built-in DeFi automation on Base Sepolia. Deploy your own wallet, deposit tokens once, and create persistent orders that execute automaticaly — gasless, trustless, non-custodial.
 
 > Deployed on Base Sepolia testnet.
