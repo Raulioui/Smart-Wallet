@@ -50,7 +50,8 @@ export default function Home() {
         </h1>
 
         <p className="text-gray-500 text-lg max-w-lg mx-auto mb-12 leading-relaxed">
-          EIP-4337 smart wallet protocol. DCA, limit orders and stop-losses, executed automatically, gasless, non-custodial.
+          Non-custodial smart wallet with built-in automation. DCA, Limit Orders and Stop Losses executed automatically via EIP-4337 and a secure off-chain executor.
+
         </p>
 
         <div className="flex items-center justify-center gap-3">

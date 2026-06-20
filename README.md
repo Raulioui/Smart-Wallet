@@ -6,7 +6,11 @@ A non-custodial smart contract wallet with built-in DeFi automation on Base Sepo
 
 ---
 
-<!-- Add screenshot of home page here -->
+<div align="center">
+  <img src="/images/homepage.png" alt="Homepage" width="85%" />
+  <br><br>
+  <em>Deployed on Base Sepolia Testnet</em>
+</div>
 
 ---
 
@@ -88,13 +92,21 @@ Node.js/TypeScript service in executor/. Polls OrderManager every 60 seconds and
 
 Next.js + wagmi v3 + viem v2 + Tailwind v4.
 
-<!-- Add screenshot of dashboard here -->
+<div align="center">
+  <img src="/images/dashboard.png" alt="Dashboard" width="85%" />
+  <br><br>
+  <em>Deployed on Base Sepolia Testnet</em>
+</div>
 
 - `/` — How it works
 - `/dashboard` — Deploy wallet, view balance, create and manage orders
 - `/settings` — Add / renew / revoke executor session key
 
-<!-- Add screenshot of settings here -->
+<div align="center">
+  <img src="/images/settings.png" alt="Settings" width="85%" />
+  <br><br>
+  <em>Deployed on Base Sepolia Testnet</em>
+</div>
 
 Supports MetaMask and Coinbase Wallet on Base Sepolia.
 
