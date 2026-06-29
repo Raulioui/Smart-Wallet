@@ -3,7 +3,12 @@
 import { useReadContract, useWriteContract, useWaitForTransactionReceipt } from "wagmi"
 import { useSmartWallet } from "@/hooks/useSmartWallet"
 import { useWallet } from "@/hooks/useWallet"
-import { smartWalletAbi, EXECUTOR_KEY } from "@/lib/contracts"
+import {
+  smartWalletAbi,
+  EXECUTOR_KEY,
+  SESSION_KEY_ALLOWED_DESTS,
+  SESSION_KEY_ALLOWED_SELECTORS,
+} from "@/lib/contracts"
 
 function formatDate(ts: bigint) {
   return new Date(Number(ts) * 1000).toLocaleDateString()
@@ -45,6 +50,8 @@ export default function Settings() {
           maxAmountPerTx: BigInt(1000e6),
           dailyLimit: BigInt(5000e6),
         },
+        [...SESSION_KEY_ALLOWED_DESTS],
+        [...SESSION_KEY_ALLOWED_SELECTORS],
       ],
     })
   }

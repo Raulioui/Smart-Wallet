@@ -3,10 +3,24 @@
 export const FACTORY_ADDRESS       = "0xE097784c26fCf1b3A5D737DF5ef48dcBae325939" as const
 export const ORDER_MANAGER_ADDRESS = "0x1e29B2021541Fafd759C781508868FD5dc97a3f6" as const
 export const EXECUTOR_KEY          = "0xD5B95747CcCEa0E0115623e05d8067a666cfF9c8" as const
+export const SWAP_ROUTER_ADDRESS   = "0x94cC0AaC535CCDB3C01d6787D6413C739ae12bc4" as const
 
 export const USDC_ADDRESS = "0x036CbD53842c5426634e7929541eC2318f3dCF7e" as const
 export const WETH_ADDRESS = "0x4200000000000000000000000000000000000006" as const
 export const ETH_USD_FEED = "0x4aDC67696bA383F43DD60A9e78F2C97Fbbfc7cb1" as const
+
+// Session key scope: the executor may only call these contracts and selectors.
+export const SESSION_KEY_ALLOWED_DESTS = [
+  USDC_ADDRESS,
+  SWAP_ROUTER_ADDRESS,
+  ORDER_MANAGER_ADDRESS,
+] as const
+
+export const SESSION_KEY_ALLOWED_SELECTORS = [
+  "0x095ea7b3" as `0x${string}`, // approve(address,uint256)
+  "0x04e45aaf" as `0x${string}`, // exactInputSingle(...)
+  "0x0188e6a2" as `0x${string}`, // recordExecution(uint256,uint256,uint256)
+] as const
 
 // ─── ABIs ────────────────────────────────────────────────────────────────────
 
@@ -59,7 +73,7 @@ export const smartWalletAbi = [
     inputs: [
       { name: "key", type: "address" },
       {
-        name: "data",
+        name: "params",
         type: "tuple",
         components: [
           { name: "isActive", type: "bool" },
@@ -68,6 +82,8 @@ export const smartWalletAbi = [
           { name: "dailyLimit", type: "uint256" },
         ],
       },
+      { name: "allowedDests", type: "address[]" },
+      { name: "allowedSelectors", type: "bytes4[]" },
     ],
     outputs: [],
   },
